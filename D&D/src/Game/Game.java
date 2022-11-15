@@ -15,7 +15,7 @@ public class Game {
             String type = choiceType(menu.askType()); // Call the method to ask the type of the character
             String choicestats = menu.askShowstats();
             character = new Character(name, type); // Create a new character
-            if (choicestats.equals("1")){ // choix d'afficher les stats
+            if (choicestats.equals("1")) { // choix d'afficher les stats
                 showStats();
             } else {
                 System.exit(0);
@@ -33,26 +33,13 @@ public class Game {
     }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     private boolean userWantsToModify() {
         String choice = menu.askModify();
-        if (choice.equals("1")){
+        if (choice.equals("1")) {
             return true;
         }
+        System.out.println("Your character is created !");
+        System.out.println(character.playerCharacterChoice());
         return false;
     }
 
@@ -93,17 +80,40 @@ public class Game {
 
     /**
      * Method to show the stats of the character
-     * @param choice    Choix dans la console
+     *
+     * @param choice Choix dans la console
      */
     private void showStats() {
-            System.out.println(character);
+        System.out.println(character);
+    }
+
+
+    private void startMainGame() {
+    }
+
+
+
+
+
+
+    private int rollDice() {
+        int dice = (int) (Math.random() * 6) + 1;
+        System.out.println(dice);
+        return dice;
+    }
+
+    private void move() {
+        int position = 0;
+        while (position < 64) {
+           int dice =rollDice();
+            position = position + dice;
+            System.out.println(position);
         }
     }
 
-//    private void rollDice() {
-//        int dice = (int) (Math.random() * 6) + 1;
-//        System.out.println(dice);
-//    }
+}
+
+
 
 
 

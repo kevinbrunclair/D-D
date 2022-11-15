@@ -1,6 +1,6 @@
 public class Plateau {
 
-    int nbCases;
+    int nbCases = 64;
 
     public Plateau(int nbCases){
         this.nbCases = nbCases;
@@ -15,9 +15,4 @@ public class Plateau {
             }
         }
     }
-
-    public void move(int position){
-        showBoardGame(position);
-    }
-
 }

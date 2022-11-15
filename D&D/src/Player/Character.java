@@ -1,38 +1,39 @@
 package Player;
 
+import Stuff.Defensive_Equipment;
+import Stuff.Offensive_Equipment;
+
 public class Character {
     private String name;
     private String type;
 
     private int lifepoints;
+    private Defensive_Equipment weapondef = new Defensive_Equipment();
+    private Offensive_Equipment weaponoff = new Offensive_Equipment();
 
     private int attackpoints;
+
+    private int position;
 
 
     // Constructors
 
-    public Character() {
-    }
-
-    public Character(String type) {
+    public Character(String name, String type) {
         this.type = type;
+        this.name = name;
         if (type.equals("Warrior")){
             this.lifepoints = 10;
             this.attackpoints = 10;
-            this.name = "javasupercool";
         } else {
             this.lifepoints = 6;
             this.attackpoints = 15;
         }
     }
 
-    public Character(String name, String type) {
-        this.name = name;
-        this.type = type;
+
+    public Character(int position) {
+        this.position = position;
     }
-
-
-
 
     // Getter and Setter
     public String getName() {
@@ -67,6 +68,18 @@ public class Character {
         this.attackpoints = attackpoints;
     }
 
+    public int getPosition() {
+        return position;
+    }
+
+    public void setPosition(int position) {
+        this.position = position;
+    }
+
+
+
+
+
     @Override
     public String toString() {
         return "Characters {" +
@@ -80,7 +93,6 @@ public class Character {
     public String playerCharacterChoice(){
         return "Your character is named " + name + " and your are a " + type;
     }
-
 
 }
 
