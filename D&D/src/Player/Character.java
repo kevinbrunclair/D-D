@@ -1,3 +1,5 @@
+package Player;
+
 public class Character {
     private String name;
     private String type;
@@ -12,8 +14,16 @@ public class Character {
     public Character() {
     }
 
-    public Character(String name) {
-        this.name = name;
+    public Character(String type) {
+        this.type = type;
+        if (type.equals("Warrior")){
+            this.lifepoints = 10;
+            this.attackpoints = 10;
+            this.name = "javasupercool";
+        } else {
+            this.lifepoints = 6;
+            this.attackpoints = 15;
+        }
     }
 
     public Character(String name, String type) {
@@ -22,8 +32,9 @@ public class Character {
     }
 
 
-    // Getter and Setter
 
+
+    // Getter and Setter
     public String getName() {
         return name;
     }
@@ -69,6 +80,8 @@ public class Character {
     public String playerCharacterChoice(){
         return "Your character is named " + name + " and your are a " + type;
     }
+
+
 }
 
 

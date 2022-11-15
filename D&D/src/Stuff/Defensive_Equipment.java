@@ -1,3 +1,5 @@
+package Stuff;
+
 public class Defensive_Equipment {
     private String type;
     private int defense_level;

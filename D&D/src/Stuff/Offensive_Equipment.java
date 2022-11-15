@@ -1,3 +1,5 @@
+package Stuff;
+
 public class Offensive_Equipment {
     private String type;
     private int attack_level;
@@ -38,7 +40,7 @@ public class Offensive_Equipment {
 
 //    @Override
 //    public String toString() {
-//        return "Offensive_Equipment{" +
+//        return "Stuff.Offensive_Equipment{" +
 //                "type='" + type + '\'' +
 //                ", attack_level=" + attack_level +
 //                ", name='" + name + '\'' +
