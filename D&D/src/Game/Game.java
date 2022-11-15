@@ -40,6 +40,7 @@ public class Game {
         }
         System.out.println("Your character is created !");
         System.out.println(character.playerCharacterChoice());
+        startMainGame();
         return false;
     }
 
@@ -81,19 +82,10 @@ public class Game {
     /**
      * Method to show the stats of the character
      *
-     * @param choice Choix dans la console
      */
     private void showStats() {
         System.out.println(character);
     }
-
-
-    private void startMainGame() {
-    }
-
-
-
-
 
 
     private int rollDice() {
@@ -102,16 +94,44 @@ public class Game {
         return dice;
     }
 
-    private void move() {
-        int position = 0;
-        while (position < 64) {
-           int dice =rollDice();
-            position = position + dice;
-            System.out.println(position);
+    private void startMainGame() {
+        System.out.println("Launch the game ?");
+        String choice = menu.askQuestion("1. Yes\n2. No");
+        if (choice.equals("1")) {
+            System.out.println("Game started");
+            showPositionOnBoardGame();
+        } else {
+            System.out.println("Game stopped");
+            System.exit(0);
         }
     }
 
+    private void showPositionOnBoardGame() {
+
+        int position = 0;
+        while (position < 64) {
+            int dice = rollDice();
+            position += dice;
+            System.out.println("You are on the case " + position);
+            if (position >= 64) {
+                String choice = menu.endGame();
+                if (choice.equals("1")) {
+                    myGame();
+                } else if (choice.equals("2")) {
+                    System.exit(0);
+                }
+            }
+
+        }
+    }
 }
+
+
+
+
+
+
+
 
 
 

@@ -10,7 +10,8 @@ public class Character {
     private int lifepoints;
     private Defensive_Equipment weapondef = new Defensive_Equipment();
     private Offensive_Equipment weaponoff = new Offensive_Equipment();
-
+    private String weaponO;
+    private String weaponD;
     private int attackpoints;
 
     private int position;
@@ -24,9 +25,13 @@ public class Character {
         if (type.equals("Warrior")){
             this.lifepoints = 10;
             this.attackpoints = 10;
+            this.weaponO = weaponoff.getName();
+            this.weaponD = weapondef.getName();
         } else {
             this.lifepoints = 6;
             this.attackpoints = 15;
+            this.weaponO = weaponoff.getNameWizard();
+            this.weaponD = weapondef.getNameWizard();
         }
     }
 
@@ -87,6 +92,8 @@ public class Character {
                 ", type='" + type + '\'' +
                 ", lifepoints=" + lifepoints +
                 ", attackpoints=" + attackpoints +
+                ", weapon=" + weaponO +
+                ", protection=" + weaponD +
                 '}';
     }
 

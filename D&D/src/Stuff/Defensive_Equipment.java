@@ -3,7 +3,10 @@ package Stuff;
 public class Defensive_Equipment {
     private String type;
     private int defense_level;
-    private String name;
+    private String name = "Shield";
+    private String nameWizard = "potiondef";
+
+
 
     public Defensive_Equipment() {
     }
@@ -36,6 +39,14 @@ public class Defensive_Equipment {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getNameWizard() {
+        return nameWizard;
+    }
+
+    public void setNameWizard(String nameWizard) {
+        this.nameWizard = nameWizard;
     }
 }
 

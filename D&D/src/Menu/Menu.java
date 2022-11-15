@@ -36,7 +36,7 @@ public class Menu {
                 """);
     }
 
-    private String askQuestion(String question) {
+    public String askQuestion(String question) {
         System.out.println(question);
         return sc.nextLine();
     }
@@ -54,6 +54,11 @@ public class Menu {
                 """);
     }
 
+    public String endGame() {
+        return askQuestion("""
+                1. Play again
+                2. Quit""");
+    }
 
 
 }

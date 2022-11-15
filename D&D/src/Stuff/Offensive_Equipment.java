@@ -3,7 +3,9 @@ package Stuff;
 public class Offensive_Equipment {
     private String type;
     private int attack_level;
-    private String name;
+    private String nameWarrior = "Sword";
+    private String nameWizard = "Fireball";
+
 
     public String getType() {
         return type;
@@ -22,11 +24,19 @@ public class Offensive_Equipment {
     }
 
     public String getName() {
-        return name;
+        return nameWarrior;
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.nameWarrior = name;
+    }
+
+    public String getNameWizard() {
+        return nameWizard;
+    }
+
+    public void setNameWizard(String nameWizard) {
+        this.nameWizard = nameWizard;
     }
 
     public Offensive_Equipment() {
@@ -35,7 +45,7 @@ public class Offensive_Equipment {
     public Offensive_Equipment(String type, int attack_level, String name) {
         this.type = type;
         this.attack_level = attack_level;
-        this.name = name;
+        this.nameWarrior = name;
     }
 
 //    @Override
