@@ -1,8 +1,10 @@
-public class Plateau {
+package board;
+
+public class Board {
 
     int nbCases = 64;
 
-    public Plateau(int nbCases){
+    public Board(int nbCases){
         this.nbCases = nbCases;
     }
 

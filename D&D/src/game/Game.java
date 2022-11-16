@@ -1,7 +1,9 @@
-package Game;
+package game;
 
-import Menu.Menu;
-import Player.Character;
+import menu.Menu;
+import player.Character;
+import player.Warriors;
+import player.Wizards;
 
 
 public class Game {
@@ -12,9 +14,15 @@ public class Game {
         String input = menu.startGame();
         if (input.equals("1")) {
             String name = menu.askName(); // Call the method to ask the name of the character
-            String type = choiceType(menu.askType()); // Call the method to ask the type of the character
+            String type = choiceType(menu.askType());// Call the method to ask the type of the character
+            if (type.equals("Warrior")) {
+                character = new Warriors(name);
+            } else if (type.equals("Wizard")) {
+                character = new Wizards(name);
+//            } else {
+//                Character Off Board Exception;
+            }
             String choicestats = menu.askShowstats();
-            character = new Character(name, type); // Create a new character
             if (choicestats.equals("1")) { // choix d'afficher les stats
                 showStats();
             } else {
@@ -69,7 +77,7 @@ public class Game {
         // menu qui fait la demande de l'attribut a modifier
         String choice = menu.askChangeNameOrType();
         if (choice.equals("1")) {
-            character.setNom(choiceName(menu.askName()));
+            character.setName(choiceName(menu.askName()));
         } else if (choice.equals("2")) {
             character.setType(choiceType(menu.askType()));
         } else if (choice.equals("3")) {
@@ -81,7 +89,6 @@ public class Game {
 
     /**
      * Method to show the stats of the character
-     *
      */
     private void showStats() {
         System.out.println(character);

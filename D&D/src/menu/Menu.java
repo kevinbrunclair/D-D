@@ -1,4 +1,4 @@
-package Menu;
+package menu;
 
 import java.util.Scanner;
 
@@ -59,7 +59,6 @@ public class Menu {
                 1. Play again
                 2. Quit""");
     }
-
 
 }
 

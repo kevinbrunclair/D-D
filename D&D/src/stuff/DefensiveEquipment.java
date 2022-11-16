@@ -1,21 +1,25 @@
-package Stuff;
+package stuff;
 
-public class Defensive_Equipment {
+abstract class DefensiveEquipment {
     private String type;
     private int defense_level;
     private String name = "Shield";
     private String nameWizard = "potiondef";
 
+    // Constructors
 
-
-    public Defensive_Equipment() {
+    public DefensiveEquipment(String type) {
+        this.type = type;
     }
 
-    public Defensive_Equipment(String type, int defense_level, String name) {
+    public DefensiveEquipment(String type, int defense_level, String name) {
         this.type = type;
         this.defense_level = defense_level;
         this.name = name;
     }
+
+
+    // Setters et Getters
 
     public String getType() {
         return type;

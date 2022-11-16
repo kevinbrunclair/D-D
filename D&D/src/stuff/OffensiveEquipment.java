@@ -1,11 +1,23 @@
-package Stuff;
+package stuff;
 
-public class Offensive_Equipment {
+abstract class OffensiveEquipment {
     private String type;
     private int attack_level;
     private String nameWarrior = "Sword";
     private String nameWizard = "Fireball";
 
+    // Constructors
+
+    public OffensiveEquipment() {
+    }
+
+    public OffensiveEquipment(String type, int attack_level, String name) {
+        this.type = type;
+        this.attack_level = attack_level;
+        this.nameWarrior = name;
+    }
+
+    // Setters et Getters
 
     public String getType() {
         return type;
@@ -39,23 +51,10 @@ public class Offensive_Equipment {
         this.nameWizard = nameWizard;
     }
 
-    public Offensive_Equipment() {
-    }
 
-    public Offensive_Equipment(String type, int attack_level, String name) {
-        this.type = type;
-        this.attack_level = attack_level;
-        this.nameWarrior = name;
+    public String getNameWarrior() {
+        return nameWarrior;
     }
-
-//    @Override
-//    public String toString() {
-//        return "Stuff.Offensive_Equipment{" +
-//                "type='" + type + '\'' +
-//                ", attack_level=" + attack_level +
-//                ", name='" + name + '\'' +
-//                '}';
-//    }
 }
 
 
