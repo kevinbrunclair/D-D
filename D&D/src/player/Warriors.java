@@ -1,24 +1,30 @@
 package player;
 
 
+import stuff.Shield;
+import stuff.Weapons;
+
 public class Warriors extends Character {
+
+    Shield shield = new Shield();
+    Weapons weapon = new Weapons();
 
     public Warriors(String name) {
         super(name);
         this.setLifepoints(10);
         this.setAttackpoints(10);
-//        this.weaponO = weaponoff.getName();
-//        this.weaponD = weapondef.getName();
+
     }
+
 
     @Override
     public String toString() {
-        return "Warriors {" +
-                "name='" + name + '\'' +
-                ", lifepoints=" + lifepoints +
-                ", attackpoints=" + attackpoints +
-                ", weapon=" +
-                ", protection=" +
+        return "Warriors " +  '\n' +
+                "name = " + name + '\n' +
+                "Lifepoints = " + lifepoints + '\n' +
+                "Attackpoints = " + attackpoints + '\n' +
+                "Weapon equiped = " + weapon.getName() + '\n' +
+                "Protection = {" + shield + "}\n" +
                 '}';
     }
 

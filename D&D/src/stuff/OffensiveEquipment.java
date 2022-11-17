@@ -1,6 +1,6 @@
 package stuff;
 
-abstract class OffensiveEquipment {
+public abstract class OffensiveEquipment {
     private String type;
     private int attack_level;
     private String nameWarrior = "Sword";

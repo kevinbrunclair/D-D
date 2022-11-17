@@ -1,40 +1,29 @@
 package stuff;
 
-abstract class DefensiveEquipment {
-    private String type;
-    private int defense_level;
-    private String name = "Shield";
-    private String nameWizard = "potiondef";
+public abstract class DefensiveEquipment {
+    protected int defense_Level;
+    protected String name;
 
     // Constructors
 
-    public DefensiveEquipment(String type) {
-        this.type = type;
+    public DefensiveEquipment(int defense_Level, String name) {
+        this.defense_Level = defense_Level;
+        this.name = name;
     }
 
-    public DefensiveEquipment(String type, int defense_level, String name) {
-        this.type = type;
-        this.defense_level = defense_level;
-        this.name = name;
+    public DefensiveEquipment() {
+
     }
 
 
     // Setters et Getters
 
-    public String getType() {
-        return type;
+    public int getDefense_Level() {
+        return defense_Level;
     }
 
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    public int getDefense_level() {
-        return defense_level;
-    }
-
-    public void setDefense_level(int defense_level) {
-        this.defense_level = defense_level;
+    public void setDefense_Level(int defense_Level) {
+        this.defense_Level = defense_Level;
     }
 
     public String getName() {
@@ -45,13 +34,7 @@ abstract class DefensiveEquipment {
         this.name = name;
     }
 
-    public String getNameWizard() {
-        return nameWizard;
-    }
 
-    public void setNameWizard(String nameWizard) {
-        this.nameWizard = nameWizard;
-    }
 }
 
 

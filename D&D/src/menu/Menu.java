@@ -2,6 +2,10 @@ package menu;
 
 import java.util.Scanner;
 
+
+/**
+ *
+ */
 public class Menu {
     private Scanner sc = new Scanner(System.in);
 
@@ -14,10 +18,19 @@ public class Menu {
                 """);
     }
 
+    /**
+     * @return String
+     */
+
     public String askName() { // Method to ask the name of the character
         return askQuestion("Please enter your name:");
 
     }
+
+
+    /**
+     * @return String
+     */
 
     public String askType() { // Method to ask the type of the character
         return askQuestion("""
@@ -28,6 +41,10 @@ public class Menu {
                 """);
     }
 
+    /**
+     * @return String
+     */
+
     public String askModify() { // Method to ask the type of the character
         return askQuestion("""
                 Do you want to modify your character?
@@ -36,16 +53,29 @@ public class Menu {
                 """);
     }
 
+    /**
+     * @param question
+     * @return String
+     */
+
     public String askQuestion(String question) {
         System.out.println(question);
         return sc.nextLine();
     }
 
+
+    /**
+     * @return String
+     */
     public String askShowstats() {
         return askQuestion("""
                 1.show stats
                 2.quit""");
     }
+
+    /**
+     * @return String
+     */
 
     public String askChangeNameOrType() {
         return askQuestion("""
@@ -53,6 +83,10 @@ public class Menu {
                 2.Type
                 """);
     }
+
+    /**
+     * @return String
+     */
 
     public String endGame() {
         return askQuestion("""

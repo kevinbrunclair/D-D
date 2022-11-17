@@ -1,7 +1,5 @@
 package player;
 
-//import Stuff.Defensive_Equipment;
-//import Stuff.Offensive_Equipment;
 
 public abstract class Character {
     protected String name;
@@ -10,8 +8,6 @@ public abstract class Character {
    protected int attackpoints;
 
    protected int position;
-
-
 
     // Constructors
     public Character(String name){
@@ -61,6 +57,7 @@ public abstract class Character {
 
     public void setType(String choiceType) {
     }
+
 }
 
 

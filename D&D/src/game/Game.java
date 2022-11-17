@@ -5,12 +5,18 @@ import player.Character;
 import player.Warriors;
 import player.Wizards;
 
-
+/**
+ *
+ */
 public class Game {
     private Character character; // Create a new character
     private final Menu menu = new Menu(); // Create a new object of the class Menu.Menu
 
-    public void myGame() { // Method to start the game
+
+    /**
+     * @throws Exception
+     */
+    public void myGame() throws Exception { // Method to start the game
         String input = menu.startGame();
         if (input.equals("1")) {
             String name = menu.askName(); // Call the method to ask the name of the character
@@ -19,8 +25,8 @@ public class Game {
                 character = new Warriors(name);
             } else if (type.equals("Wizard")) {
                 character = new Wizards(name);
-//            } else {
-//                Character Off Board Exception;
+            } else {
+
             }
             String choicestats = menu.askShowstats();
             if (choicestats.equals("1")) { // choix d'afficher les stats
@@ -40,8 +46,12 @@ public class Game {
 
     }
 
+    /**
+     * @return
+     * @throws Exception
+     */
 
-    private boolean userWantsToModify() {
+    private boolean userWantsToModify() throws Exception {
         String choice = menu.askModify();
         if (choice.equals("1")) {
             return true;
@@ -52,6 +62,10 @@ public class Game {
         return false;
     }
 
+    /**
+     * @param choice
+     * @return
+     */
     private String choiceType(String choice) { // Method to choose the type of the character
         if (choice.equals("1")) {
             return "Warrior";
@@ -66,6 +80,11 @@ public class Game {
         }
     }
 
+
+    /**
+     * @param choice
+     * @return
+     */
     private String choiceName(String choice) { // Method to choose the name of the character
         if (choice.equals("q")) {
             System.exit(0);
@@ -73,6 +92,9 @@ public class Game {
         return choice;
     }
 
+    /**
+     *
+     */
     private void modifyCharacter() { // Method to modify the character
         // menu qui fait la demande de l'attribut a modifier
         String choice = menu.askChangeNameOrType();
@@ -90,18 +112,24 @@ public class Game {
     /**
      * Method to show the stats of the character
      */
+
     private void showStats() {
         System.out.println(character);
     }
 
-
+    /**
+     * @return
+     */
     private int rollDice() {
         int dice = (int) (Math.random() * 6) + 1;
         System.out.println(dice);
         return dice;
     }
 
-    private void startMainGame() {
+    /**
+     * @throws Exception
+     */
+    private void startMainGame() throws Exception {
         System.out.println("Launch the game ?");
         String choice = menu.askQuestion("1. Yes\n2. No");
         if (choice.equals("1")) {
@@ -113,24 +141,33 @@ public class Game {
         }
     }
 
-    private void showPositionOnBoardGame() {
-
+    /**
+     * @throws Exception
+     */
+    private void showPositionOnBoardGame() throws Exception {
         int position = 0;
-        while (position < 64) {
-            int dice = rollDice();
-            position += dice;
-            System.out.println("You are on the case " + position);
-            if (position >= 64) {
-                String choice = menu.endGame();
-                if (choice.equals("1")) {
-                    myGame();
-                } else if (choice.equals("2")) {
-                    System.exit(0);
+        try {
+            while (position < 64) {
+                int dice = rollDice();
+                position += dice;
+                if (position >= 64) {
+                    throw new CharacterOutOfPlatformException();
                 }
+                System.out.println("You are on the case " + position);
+            }
+        } catch (CharacterOutOfPlatformException e) {
+            System.out.println(e);
+            String choice = menu.endGame();
+            if (choice.equals("1")) {
+                myGame();
+            } else if (choice.equals("2")) {
+                System.exit(0);
             }
 
         }
     }
+
+
 }
 
 
