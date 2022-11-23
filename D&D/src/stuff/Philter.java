@@ -6,9 +6,9 @@ public class Philter extends DefensiveEquipment {
         super(3,"PhilterOfProtection");
     }
 
-    @Override
-    public String toString() {
-        return name + ", " + "leveldefpotion = " + defense_Level ;
+    public Philter(String name, int def) {
+        super(def, name);
+
     }
 }
 

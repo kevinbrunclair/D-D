@@ -1,6 +1,9 @@
 package player;
 
 
+import stuff.DefensiveEquipment;
+import stuff.OffensiveEquipment;
+
 public abstract class Personnage {
 
     protected String name;
@@ -9,6 +12,9 @@ public abstract class Personnage {
 
    protected int position;
 
+   protected OffensiveEquipment WeaponOf;
+    protected DefensiveEquipment WeaponDef;
+
     // Constructors
     public Personnage(String name){
         this.name = name;
@@ -16,6 +22,13 @@ public abstract class Personnage {
     public Personnage(int position) {
         this.position = position;
     }
+
+    public Personnage(String name, int attack, int pv){
+      this.name = name ;
+      this.attackpoints = attack;
+      this.lifepoints = pv;
+    }
+
 
     // Getter and Setter -> Setter pour affecter -> Getter pour récupérer
 

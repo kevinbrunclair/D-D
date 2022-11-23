@@ -7,12 +7,15 @@ import stuff.DefensiveEquipment;
 public class Potion extends DefensiveEquipment implements Case {
 
     public Potion(String name,int pvrendu){
-        super(name);
+        super(pvrendu, name);
     }
 
     @Override
     public void interact(Personnage c) {
-        System.out.println("Vous avez trouver " + name);
+        System.out.println("Vous avez trouvez un " + name + " et vous augmente vos pv de " + healpoints);
+        int damagetaken = c.getLifepoints() + healpoints;
+        c.setLifepoints(damagetaken);
+
     }
 
 }

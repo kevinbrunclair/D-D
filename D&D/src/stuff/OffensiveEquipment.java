@@ -5,18 +5,12 @@ public abstract class OffensiveEquipment {
 
     protected String name;
     protected int attackpoints;
-    private String nameWarrior = "Sword";
-    private String nameWizard = "Fireball";
+
+
 
     // Constructors
 
     public OffensiveEquipment() {
-    }
-
-    public OffensiveEquipment(String type, int attackpoints, String name) {
-        this.type = type;
-        this.attackpoints = attackpoints;
-        this.nameWarrior = name;
     }
 
     public OffensiveEquipment(String name, int attack) {
@@ -34,14 +28,13 @@ public abstract class OffensiveEquipment {
         return attackpoints;
     }
 
-    public String getName() {
-        return nameWarrior;
+    @Override
+    public String toString() {
+        return "" +
+                 name +
+                " \nattackpoints = " + attackpoints
+                ;
     }
-
-    public void setName(String name) {
-        this.nameWarrior = name;
-    }
-
 }
 
 

@@ -12,11 +12,11 @@ public class Enemy extends Personnage implements Case {
     }
 
     public Enemy(String name, int attack, int pv) {
-        super(name);
+        super(name,attack,pv);
     }
 
     public String toString() {
-        return "Enemy{" +
+        return "Enemy" +
                 "name='" + name + '\'' +
                 ", lifepoints=" + lifepoints +
                 ", attackpoints=" + attackpoints +
@@ -25,6 +25,8 @@ public class Enemy extends Personnage implements Case {
 
     @Override
     public void interact(Personnage c) {
-        System.out.println("Vous avez trouvez un " + name + "ayant" + lifepoints + "pv" + attackpoints + "atk");
+        int damagetaken = c.getLifepoints() - attackpoints;
+        c.setLifepoints(damagetaken);
+        System.out.println("Vous avez trouvez un " + name + " ayant " + lifepoints + " pv " + attackpoints + " atk " + " Vous prenez " + attackpoints);
     }
 }

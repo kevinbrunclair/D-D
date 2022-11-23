@@ -10,7 +10,7 @@ public class PotionStandard extends Potion {
     public String toString() {
         return "PotionStandard{" +
                 "name='" + name + '\'' +
-                ", healpoints=" + healpoints +
+                "healpoints=" + healpoints +
                 '}';
     }
 

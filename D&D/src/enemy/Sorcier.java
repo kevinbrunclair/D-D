@@ -19,10 +19,6 @@ public class Sorcier  extends Enemy {
                 ", attackpoints=" + attackpoints +
                 '}';
 
-
     }
-
-
-
 
 }

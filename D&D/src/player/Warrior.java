@@ -6,14 +6,15 @@ import stuff.Weapon;
 
 public class Warrior extends Personnage {
 
-    Shield shield = new Shield();
-    Weapon weapon = new Weapon();
+
+
 
     public Warrior(String name) {
         super(name);
         this.setLifepoints(10);
         this.setAttackpoints(10);
-
+        this.WeaponOf = new Weapon("axe",1);
+        this.WeaponDef = new Shield("shield",3);
     }
 
 
@@ -23,9 +24,9 @@ public class Warrior extends Personnage {
                 "name = " + name + '\n' +
                 "Lifepoints = " + lifepoints + '\n' +
                 "Attackpoints = " + attackpoints + '\n' +
-                "Weapon equiped = " + weapon.getName() + '\n' +
-                "Protection = {" + shield + "}\n" +
-                '}';
+                "Weapon equiped = " + WeaponOf + '\n' +
+                "Protection = " +  WeaponDef + "\n"
+                ;
     }
 
 }

@@ -6,8 +6,6 @@ import enemy.Gobelin;
 import enemy.Sorcier;
 import player.Personnage;
 import game.CharacterOutOfPlatformException;
-
-import java.nio.charset.CharacterCodingException;
 import java.util.ArrayList;
 
 public class Board {
@@ -27,29 +25,6 @@ public class Board {
         board.add(new Eclair()); // case 8
         board.add(new Gobelin()); // case 9
         board.add(new Sorcier()); // case 10
-        board.add(new Massue()); // case 11
-        board.add(new Gobelin()); // case 12
-        board.add(new PotionStandard()); // case 13
-        board.add(new EmptyCase()); // case 14
-        board.add(new Gobelin()); // case 15
-        board.add(new EmptyCase()); // case 14
-        board.add(new Eclair()); // case 17
-        board.add(new Gobelin()); // case 18
-//        board.add(new Epee()); // case 19
-//        board.add(new Sorcier()); // case 20
-
-
-
-
-
-
-
-
-
-//        board.add(new Epee());
-//        board.add(new Dragon());
-//        board.add(new BouleDeFeu());
-
         return board;
     }
 
@@ -59,6 +34,7 @@ public class Board {
         }
         character.setPosition(character.getPosition() + dice);
     }
+
 }
 
 
