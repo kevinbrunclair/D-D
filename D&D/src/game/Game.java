@@ -1,30 +1,37 @@
 package game;
 
+import board.Board;
+import board.Case;
 import menu.Menu;
-import player.Character;
-import player.Warriors;
-import player.Wizards;
+import player.Personnage;
+import player.Warrior;
+import player.Wizard;
+
+import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  *
  */
 public class Game {
-    private Character character; // Create a new character
+    private Personnage character; // Create a new character
     private final Menu menu = new Menu(); // Create a new object of the class Menu.Menu
 
+    private Board board = new Board();
+    private Scanner sc = new Scanner(System.in);
 
     /**
      * @throws Exception
      */
-    public void myGame() throws Exception { // Method to start the game
+    public void myGame() { // Method to start the game
         String input = menu.startGame();
         if (input.equals("1")) {
             String name = menu.askName(); // Call the method to ask the name of the character
             String type = choiceType(menu.askType());// Call the method to ask the type of the character
             if (type.equals("Warrior")) {
-                character = new Warriors(name);
+                character = new Warrior(name);
             } else if (type.equals("Wizard")) {
-                character = new Wizards(name);
+                character = new Wizard(name);
             } else {
 
             }
@@ -51,7 +58,7 @@ public class Game {
      * @throws Exception
      */
 
-    private boolean userWantsToModify() throws Exception {
+    private boolean userWantsToModify() {
         String choice = menu.askModify();
         if (choice.equals("1")) {
             return true;
@@ -120,8 +127,10 @@ public class Game {
     /**
      * @return
      */
+
+
     private int rollDice() {
-        int dice = (int) (Math.random() * 6) + 1;
+        int dice = (int) (Math.random() + 1);
         System.out.println(dice);
         return dice;
     }
@@ -129,12 +138,12 @@ public class Game {
     /**
      * @throws Exception
      */
-    private void startMainGame() throws Exception {
+    private void startMainGame() {
         System.out.println("Launch the game ?");
         String choice = menu.askQuestion("1. Yes\n2. No");
         if (choice.equals("1")) {
             System.out.println("Game started");
-            showPositionOnBoardGame();
+            PlayATurn();
         } else {
             System.out.println("Game stopped");
             System.exit(0);
@@ -144,16 +153,19 @@ public class Game {
     /**
      * @throws Exception
      */
-    private void showPositionOnBoardGame() throws Exception {
+    private void PlayATurn() {
         int position = 0;
+        ArrayList<Case> boardarray = Board.getBoard();
         try {
-            while (position < 64) {
+            while (true) {
                 int dice = rollDice();
+                board.movePlayer(character,dice);
                 position += dice;
-                if (position >= 64) {
-                    throw new CharacterOutOfPlatformException();
-                }
+                System.out.println("Press enter to continue");
+                sc.nextLine();
                 System.out.println("You are on the case " + position);
+                boardarray.get(position).interact(this.character);
+                System.out.println(character);
             }
         } catch (CharacterOutOfPlatformException e) {
             System.out.println(e);
@@ -167,8 +179,12 @@ public class Game {
         }
     }
 
-
 }
+
+
+
+
+
 
 
 

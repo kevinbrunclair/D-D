@@ -2,7 +2,9 @@ package stuff;
 
 public abstract class OffensiveEquipment {
     private String type;
-    private int attack_level;
+
+    protected String name;
+    protected int attackpoints;
     private String nameWarrior = "Sword";
     private String nameWizard = "Fireball";
 
@@ -11,28 +13,25 @@ public abstract class OffensiveEquipment {
     public OffensiveEquipment() {
     }
 
-    public OffensiveEquipment(String type, int attack_level, String name) {
+    public OffensiveEquipment(String type, int attackpoints, String name) {
         this.type = type;
-        this.attack_level = attack_level;
+        this.attackpoints = attackpoints;
         this.nameWarrior = name;
+    }
+
+    public OffensiveEquipment(String name, int attack) {
+        this.name = name;
+        this.attackpoints = attack;
     }
 
     // Setters et Getters
 
-    public String getType() {
-        return type;
+    public void setAttackpoints(int attackpoints) {
+        this.attackpoints = attackpoints;
     }
 
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    public int getAttack_level() {
-        return attack_level;
-    }
-
-    public void setAttack_level(int attack_level) {
-        this.attack_level = attack_level;
+    public int getAttackpoints() {
+        return attackpoints;
     }
 
     public String getName() {
@@ -43,18 +42,6 @@ public abstract class OffensiveEquipment {
         this.nameWarrior = name;
     }
 
-    public String getNameWizard() {
-        return nameWizard;
-    }
-
-    public void setNameWizard(String nameWizard) {
-        this.nameWizard = nameWizard;
-    }
-
-
-    public String getNameWarrior() {
-        return nameWarrior;
-    }
 }
 
 

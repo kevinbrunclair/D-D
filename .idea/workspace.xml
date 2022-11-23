@@ -1,7 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="28fe1499-4af0-4699-8f3f-0eb5ba9c83a8" name="Changes" comment="" />
+    <list default="true" id="28fe1499-4af0-4699-8f3f-0eb5ba9c83a8" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D&amp;D/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/D&amp;D/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D&amp;D/out/production/DonjonsetDragons/Game/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/D&amp;D/out/production/DonjonsetDragons/Game/Game.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D&amp;D/out/production/DonjonsetDragons/Menu/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/D&amp;D/out/production/DonjonsetDragons/Menu/Menu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D&amp;D/out/production/DonjonsetDragons/Player/Character.class" beforeDir="false" afterPath="$PROJECT_DIR$/D&amp;D/out/production/DonjonsetDragons/Player/Character.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/D&amp;D/src/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/D&amp;D/src/game/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DonjonsetDragons/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DonjonsetDragons/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DonjonsetDragons/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DonjonsetDragons/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DonjonsetDragons/DonjonsetDragons.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DonjonsetDragons/src/Character.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DonjonsetDragons/src/Defensive_Equipment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DonjonsetDragons/src/Game.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DonjonsetDragons/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DonjonsetDragons/src/Menu.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DonjonsetDragons/src/Offensive_Equipment.java" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,14 +33,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/kevin.brunclaire/IdeaProjects/D-D"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/kevin.brunclaire/IdeaProjects/Java/D-D/D&amp;D&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -32,6 +50,9 @@
       <option name="presentableId" value="Default" />
       <updated>1668005166452</updated>
       <workItem from="1668005167651" duration="49000" />
+      <workItem from="1668005661660" duration="12000" />
+      <workItem from="1668695791312" duration="32000" />
+      <workItem from="1668695913875" duration="41000" />
     </task>
     <servers />
   </component>

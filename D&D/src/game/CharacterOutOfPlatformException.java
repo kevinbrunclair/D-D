@@ -7,5 +7,4 @@ public class CharacterOutOfPlatformException extends Exception {
         return "Your Character Is Out Of Board";
     }
 
-
 }

@@ -3,6 +3,7 @@ package stuff;
 public abstract class DefensiveEquipment {
     protected int defense_Level;
     protected String name;
+    protected int healpoints;
 
     // Constructors
 
@@ -11,16 +12,14 @@ public abstract class DefensiveEquipment {
         this.name = name;
     }
 
-    public DefensiveEquipment() {
+
+    public DefensiveEquipment(String name) {
 
     }
 
 
     // Setters et Getters
 
-    public int getDefense_Level() {
-        return defense_Level;
-    }
 
     public void setDefense_Level(int defense_Level) {
         this.defense_Level = defense_Level;
