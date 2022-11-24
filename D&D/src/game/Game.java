@@ -131,7 +131,7 @@ public class Game {
 
     private int rollDice() {
         int dice = (int) (Math.random() + 1);
-        System.out.println(dice);
+        System.out.println("Résultat du dé : " + dice);
         return dice;
     }
 

@@ -25,7 +25,7 @@ public class Warrior extends Personnage {
                 "Lifepoints = " + lifepoints + '\n' +
                 "Attackpoints = " + attackpoints + '\n' +
                 "Weapon equiped = " + WeaponOf + '\n' +
-                "Protection : " +  WeaponDef + "\n"
+                "Protection : " +'\n'+  WeaponDef + "\n"
                 ;
     }
 

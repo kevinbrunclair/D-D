@@ -26,6 +26,8 @@ public class Enemy extends Personnage implements Case {
     public void interact(Personnage c) {
         int damagetaken = c.getLifepoints() - attackpoints;
         c.setLifepoints(damagetaken);
+        System.out.println("------------------------------------------------------------------------------------------------------------------------");
         System.out.println("Vous avez trouvez un " + name + " ayant " + lifepoints + " pv " + attackpoints + " atk " + " Vous prenez " + attackpoints);
+        System.out.println("------------------------------------------------------------------------------------------------------------------------");
     }
 }

@@ -6,6 +6,5 @@ public class Main {
         Game game = new Game();
         game.myGame();
         Board test = new Board();
-        System.out.println(test);
     }
 }
