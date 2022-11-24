@@ -14,4 +14,15 @@ public class Wizard extends Personnage {
         this.WeaponOf = new Weapon("Fireball", 1);
         this.WeaponDef = new Philter("Philter", 1);
     }
+
+    @Override
+    public String toString() {
+        return "Warriors " +  '\n' +
+                "name = " + name + '\n' +
+                "Lifepoints = " + lifepoints + '\n' +
+                "Attackpoints = " + attackpoints + '\n' +
+                "Weapon equiped = " + WeaponOf + '\n' +
+                "Protection : " +  "" + WeaponDef + "\n"
+                ;
+    }
 }

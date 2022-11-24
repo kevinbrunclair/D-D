@@ -1,8 +1,8 @@
 package Objects;
 
-public class GrandesPotions extends Potion {
+public class GrandePotion extends Potion {
 
-    public GrandesPotions() {
+    public GrandePotion() {
         super("Grandepotion",5);
     }
 

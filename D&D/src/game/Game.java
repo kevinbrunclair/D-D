@@ -163,7 +163,7 @@ public class Game {
                 position += dice;
                 System.out.println("Press enter to continue");
                 sc.nextLine();
-                System.out.println("You are on the case " + position);
+                board.displayGameBoard(character);
                 boardarray.get(position).interact(this.character);
                 System.out.println(character);
             }

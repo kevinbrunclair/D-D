@@ -5,8 +5,6 @@ import player.Personnage;
 
 public class Enemy extends Personnage implements Case {
 
-
-
     public Enemy(int name) {
         super(name);
     }
@@ -14,6 +12,7 @@ public class Enemy extends Personnage implements Case {
     public Enemy(String name, int attack, int pv) {
         super(name,attack,pv);
     }
+
 
     public String toString() {
         return "Enemy" +
