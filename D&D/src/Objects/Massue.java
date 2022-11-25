@@ -7,7 +7,7 @@ import stuff.Weapon;
 public class Massue extends Weapon{
 
     public Massue() {
-        super(" massue ",3);
+        super(" massue ",1);
 
     }
 

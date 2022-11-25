@@ -4,20 +4,23 @@ import board.Case;
 import player.Personnage;
 import stuff.DefensiveEquipment;
 
-public class Potion extends DefensiveEquipment implements Case {
+public abstract class Potion implements Case {
 
-    public Potion(String name,int pvrendu){
-        super(pvrendu, name);
+    protected final String name;
+
+    protected final int pvrendu;
+
+    public Potion(String name, int pvrendu){
+        this.name = name;
+        this.pvrendu = pvrendu;
     }
 
     @Override
     public void interact(Personnage c) {
         System.out.println("--------------------------------------------------------------------------");
-        System.out.println("Vous avez trouvez un " + name + " et vous augmente vos pv de " + healpoints);
+        System.out.println("Vous avez trouvez un " + name + " et vous augmente vos pv de " + pvrendu);
         System.out.println("--------------------------------------------------------------------------");
-        int damagetaken = c.getLifepoints() + healpoints;
+        int damagetaken = c.getLifepoints() + pvrendu;
         c.setLifepoints(damagetaken);
-
     }
-
 }

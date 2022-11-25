@@ -6,7 +6,7 @@ import stuff.Spell;
 public class BouleDeFeu  extends Spell implements Case {
 
     public BouleDeFeu() {
-        super("bouledefeu",7);
+        super("bouledefeu",1);
     }
 
     @Override

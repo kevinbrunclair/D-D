@@ -8,7 +8,7 @@ import stuff.Spell;
 public class Eclair extends Spell {
 
     public Eclair() {
-        super("eclair",2);
+        super("eclair",1);
     }
 
     @Override

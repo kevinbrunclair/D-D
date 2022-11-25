@@ -5,6 +5,6 @@ public class Main {
     public static void main(String[] args) {
         Game game = new Game();
         game.myGame();
-        Board test = new Board();
+        Board test = new Board(false);
     }
 }

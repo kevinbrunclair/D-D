@@ -1,13 +1,11 @@
 package game;
 
 import board.Board;
-import board.Case;
 import menu.Menu;
 import player.Personnage;
 import player.Warrior;
 import player.Wizard;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -15,10 +13,18 @@ import java.util.Scanner;
  */
 public class Game {
     private Personnage character; // Create a new character
-    private final Menu menu = new Menu(); // Create a new object of the class Menu.Menu
+    private final Menu menu; // Create a new object of the class Menu.Menu
 
-    private Board board = new Board();
-    private Scanner sc = new Scanner(System.in);
+    private Board board;
+    private Scanner sc;
+
+
+    public Game() {
+        sc = new Scanner(System.in);
+        board = new Board(false);
+        menu = new Menu();
+
+    }
 
     /**
      * @throws Exception
@@ -143,7 +149,7 @@ public class Game {
         String choice = menu.askQuestion("1. Yes\n2. No");
         if (choice.equals("1")) {
             System.out.println("Game started");
-            PlayATurn();
+            playATurn();
         } else {
             System.out.println("Game stopped");
             System.exit(0);
@@ -153,18 +159,20 @@ public class Game {
     /**
      * @throws Exception
      */
-    private void PlayATurn() {
+    private void playATurn() {
         int position = 0;
-        ArrayList<Case> boardarray = Board.getBoard();
+        boolean isRandom = false;
+        Board boardarray = new Board(isRandom);
         try {
             while (true) {
+                characterisDead();
                 int dice = rollDice();
-                board.movePlayer(character,dice);
+                board.movePlayer(character, dice);
                 position += dice;
                 System.out.println("Press enter to continue");
                 sc.nextLine();
                 board.displayGameBoard(character);
-                boardarray.get(position).interact(this.character);
+                boardarray.getBoard().get(position).interact(this.character);
                 System.out.println(character);
             }
         } catch (CharacterOutOfPlatformException e) {
@@ -179,6 +187,14 @@ public class Game {
         }
     }
 
+    public void characterisDead() {
+        if (character.getLifepoints() <= 0) {
+            System.out.println("You are dead : GAME OVER !! ");
+            menu.endGame();
+
+        }
+
+    }
 }
 
 

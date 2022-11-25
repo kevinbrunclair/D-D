@@ -1,6 +1,7 @@
 package player;
 
 
+import enemy.Enemy;
 import stuff.DefensiveEquipment;
 import stuff.OffensiveEquipment;
 
@@ -71,6 +72,7 @@ public abstract class Personnage {
     public void setPosition(int position) {
         this.position = position;
     }
+
 }
 
 

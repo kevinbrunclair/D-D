@@ -3,13 +3,12 @@ package stuff;
 public abstract class DefensiveEquipment {
     protected int defense_Level;
     protected String name;
-    protected int healpoints;
+
 
     // Constructors
 
-    public DefensiveEquipment(int pv, String name, int def) {
+    public DefensiveEquipment(String name, int def) {
         this.name = name;
-        this.healpoints = pv;
         this.defense_Level = def;
     }
 

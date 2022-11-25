@@ -11,11 +11,13 @@ public class Warrior extends Personnage {
 
     public Warrior(String name) {
         super(name);
-        this.setLifepoints(10);
-        this.setAttackpoints(10);
+        this.setLifepoints(1);
+        this.setAttackpoints(2);
         this.WeaponOf = new Weapon("axe",1);
         this.WeaponDef = new Shield("shield",3);
     }
+
+
 
 
     @Override
