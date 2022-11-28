@@ -164,16 +164,20 @@ public class Game {
         boolean isRandom = false;
         Board boardarray = new Board(isRandom);
         try {
-            while (true) {
-                characterisDead();
+            while (character.getLifepoints() > 0) {
                 int dice = rollDice();
                 board.movePlayer(character, dice);
-                position += dice;
+                position += dice; //
                 System.out.println("Press enter to continue");
                 sc.nextLine();
-                board.displayGameBoard(character);
                 boardarray.getBoard().get(position).interact(this.character);
+                board.displayGameBoard(character);
                 System.out.println(character);
+
+            }
+            if (character.getLifepoints()<=0){
+                characterisDead();
+
             }
         } catch (CharacterOutOfPlatformException e) {
             System.out.println(e);
@@ -190,10 +194,8 @@ public class Game {
     public void characterisDead() {
         if (character.getLifepoints() <= 0) {
             System.out.println("You are dead : GAME OVER !! ");
-            menu.endGame();
-
+            myGame();
         }
-
     }
 }
 

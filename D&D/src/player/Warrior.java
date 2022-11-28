@@ -11,8 +11,8 @@ public class Warrior extends Personnage {
 
     public Warrior(String name) {
         super(name);
-        this.setLifepoints(1);
-        this.setAttackpoints(2);
+        this.setLifepoints(10);
+        this.setAttackpoints(1);
         this.WeaponOf = new Weapon("axe",1);
         this.WeaponDef = new Shield("shield",3);
     }

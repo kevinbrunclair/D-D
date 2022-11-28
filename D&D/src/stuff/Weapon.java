@@ -24,7 +24,7 @@ public class Weapon extends OffensiveEquipment implements Case {
             int attack = c.getAttackpoints() + attackpoints;
             c.setAttackpoints(attack);
             System.out.println("-------------------------------------------------------------------------------------------");
-            System.out.println("Vous avez trouvez une "+ name +" et vous augmente vos points d'attaque de " + attackpoints);
+            System.out.println("Vous avez trouvez une "+ name +" et vous augmente vos points d'attaques de " + attackpoints);
             System.out.println("-------------------------------------------------------------------------------------------");
         } else {
             System.out.println("-------------------------------------------------------");

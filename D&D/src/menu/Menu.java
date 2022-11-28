@@ -7,7 +7,7 @@ import java.util.Scanner;
  *
  */
 public class Menu {
-    private Scanner sc = new Scanner(System.in);
+    private static Scanner sc = new Scanner(System.in);
 
     public String startGame() { // Method to start the game
         return askQuestion("""
@@ -58,7 +58,7 @@ public class Menu {
      * @return String
      */
 
-    public String askQuestion(String question) {
+    public static String askQuestion(String question) {
         System.out.println(question);
         return sc.nextLine();
     }
@@ -93,6 +93,13 @@ public class Menu {
                 1. Play again
                 2. Quit""");
     }
+
+    public static String nowFight(){
+      return askQuestion("""
+              1. Attack Enemy
+              2. Escape""");
+    }
+
 
 }
 
