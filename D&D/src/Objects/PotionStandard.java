@@ -3,7 +3,7 @@ package Objects;
 public class PotionStandard extends Potion {
 
     public PotionStandard() {
-        super("potionstandard",1);
+        super("potionstandard",2);
     }
 
     @Override

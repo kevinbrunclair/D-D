@@ -3,7 +3,7 @@ package enemy;
 public class Dragon extends Enemy {
 
     public Dragon() {
-        super("Dragon", 4, 15);
+        super("Dragon", 4, 30);
     }
 
     @Override

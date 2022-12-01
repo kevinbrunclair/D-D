@@ -6,10 +6,6 @@ import player.Warrior;
 
 public class Weapon extends OffensiveEquipment implements Case {
 
-
-    private void setName(String name) {
-    }
-
     public Weapon(String name, int attack) {
         super(name, attack);
     }

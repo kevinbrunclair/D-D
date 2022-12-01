@@ -1,11 +1,12 @@
 package player;
 
 
-import enemy.Enemy;
 import stuff.DefensiveEquipment;
 import stuff.OffensiveEquipment;
 
 public abstract class Personnage {
+
+    protected String type;
 
     protected String name;
     protected int lifepoints;
@@ -30,8 +31,21 @@ public abstract class Personnage {
       this.lifepoints = pv;
     }
 
+    public Personnage() {
+
+    }
+
 
     // Getter and Setter -> Setter pour affecter -> Getter pour récupérer
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(){
+        this.type = type;
+    }
+
 
     public String getName() {
         return name;
@@ -73,6 +87,21 @@ public abstract class Personnage {
         this.position = position;
     }
 
+    public OffensiveEquipment getWeaponOf() {
+        return WeaponOf;
+    }
+
+    public void setWeaponOf(OffensiveEquipment weaponOf) {
+        WeaponOf = weaponOf;
+    }
+
+    public DefensiveEquipment getWeaponDef() {
+        return WeaponDef;
+    }
+
+    public void setWeaponDef(DefensiveEquipment weaponDef) {
+        WeaponDef = weaponDef;
+    }
 }
 
 

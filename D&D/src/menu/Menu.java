@@ -13,8 +13,10 @@ public class Menu {
         return askQuestion("""
                 Welcome to the DnD game!
                 Please enter your choice:
-                1. Play
-                2. Quit
+                1. CreateHero
+                2. SelectHero Database
+                3. ChangeLifPointsHero
+                4. Quit
                 """);
     }
 

@@ -5,7 +5,7 @@ import stuff.Weapon;
 public class Epee extends Weapon {
 
     public Epee() {
-        super("épee",1);
+        super("épee",5);
     }
 
     @Override

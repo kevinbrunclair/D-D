@@ -9,8 +9,8 @@ public class Wizard extends Personnage {
 
     public Wizard(String name) {
         super(name);
-        this.setLifepoints(6);
-        this.setAttackpoints(10);
+        this.setLifepoints(4);
+        this.setAttackpoints(12);
         this.WeaponOf = new Weapon("Fireball", 1);
         this.WeaponDef = new Philter("Philter", 1);
     }

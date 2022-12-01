@@ -5,6 +5,7 @@ import menu.Menu;
 import player.Personnage;
 import player.Warrior;
 import player.Wizard;
+import singleton.Dbaccess;
 
 import java.util.Scanner;
 
@@ -15,13 +16,15 @@ public class Game {
     private Personnage character; // Create a new character
     private final Menu menu; // Create a new object of the class Menu.Menu
 
+    Dbaccess access = Dbaccess.getInstance();
+
     private Board board;
     private Scanner sc;
 
 
     public Game() {
         sc = new Scanner(System.in);
-        board = new Board(false);
+        board = new Board(true);
         menu = new Menu();
 
     }
@@ -36,25 +39,27 @@ public class Game {
             String type = choiceType(menu.askType());// Call the method to ask the type of the character
             if (type.equals("Warrior")) {
                 character = new Warrior(name);
+                access.createHero("guerrier", "kev", 80, 10, "epee", "bouclier");
             } else if (type.equals("Wizard")) {
                 character = new Wizard(name);
-            } else {
-
-            }
-            String choicestats = menu.askShowstats();
-            if (choicestats.equals("1")) { // choix d'afficher les stats
-                showStats();
-            } else {
-                System.exit(0);
+                access.createHero("magicien", "cedric", 20, 10, "baton", "boucliersupercool");
             }
 
-            while (userWantsToModify() == true) {
-                modifyCharacter(); // Call the method to ask if the user wants to modify the character
-                System.out.println(character.playerCharacterChoice()); // Call the method to display the character
-            }
+        } else if (input.equals("2")) {
+            access.selectHero(2);
+        }
 
+
+        String choicestats = menu.askShowstats();
+        if (choicestats.equals("1")) { // choix d'afficher les stats
+            showStats();
         } else {
             System.exit(0);
+        }
+
+        while (userWantsToModify() == true) {
+            modifyCharacter(); // Call the method to ask if the user wants to modify the character
+            System.out.println(character.playerCharacterChoice()); // Call the method to display the character
         }
 
     }
@@ -136,7 +141,7 @@ public class Game {
 
 
     private int rollDice() {
-        int dice = (int) (Math.random() + 1);
+        int dice = (int) (Math.random() * 6 + 1);
         System.out.println("Résultat du dé : " + dice);
         return dice;
     }
@@ -170,12 +175,13 @@ public class Game {
                 position += dice; //
                 System.out.println("Press enter to continue");
                 sc.nextLine();
+                board.displayGameBoard(character);
                 boardarray.getBoard().get(position).interact(this.character);
                 board.displayGameBoard(character);
                 System.out.println(character);
 
             }
-            if (character.getLifepoints()<=0){
+            if (character.getLifepoints() <= 0) {
                 characterisDead();
 
             }

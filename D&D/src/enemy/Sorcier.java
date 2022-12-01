@@ -3,7 +3,7 @@ package enemy;
 public class Sorcier  extends Enemy {
 
     public Sorcier() {
-        super("Sorcier",2,9);
+        super("Sorcier",2,18);
 
     }
 

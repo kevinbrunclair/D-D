@@ -6,7 +6,7 @@ import player.Personnage;
 public class Gobelin extends Enemy{
 
     public Gobelin() {
-        super("Gobelin", 1, 6);
+        super("Gobelin", 1, 12);
     }
 
     @Override
