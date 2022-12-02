@@ -2,7 +2,6 @@ package Objects;
 
 import board.Case;
 import player.Personnage;
-import stuff.DefensiveEquipment;
 
 public abstract class Potion implements Case {
 

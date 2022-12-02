@@ -47,6 +47,15 @@ public class Game {
 
         } else if (input.equals("2")) {
             access.selectHero(2);
+
+        } else if (input.equals("3")) {
+            access.updateHero(2, "guerrier", "jerome", 6666,6666, "epee", "bouclier");
+            System.out.println("Hero updated");
+        } else if (input.equals("4")) {
+            System.out.println("Hero deleted");
+            access.deleteHero(2);
+        } else if (input.equals("5")) {
+            System.exit(0);
         }
 
 

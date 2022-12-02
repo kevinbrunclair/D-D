@@ -47,8 +47,42 @@ public class Dbaccess {
 
     public void createHero(String type, String nom, int niveauvie, int niveauforce, String armeetousort, String bouclier) {
         try {
-            String query = "INSERT INTO hero (type, nom, niveauvie, niveauforce, armeetousort, bouclier) VALUES ('" + type + "', '" + nom + "', '" + niveauvie + "', '" + niveauforce + "', '" + armeetousort + "', '" + bouclier + "')";
-            statement.executeUpdate(query);
+            PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO hero (type, nom, niveauvie, niveauforce, armeetousort, bouclier) VALUES (?, ?, ?, ?, ?, ?)");
+            preparedStatement.setString(1, type);
+            preparedStatement.setString(2, nom);
+            preparedStatement.setInt(3, niveauvie);
+            preparedStatement.setInt(4, niveauforce);
+            preparedStatement.setString(5, armeetousort);
+            preparedStatement.setString(6, bouclier);
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+
+        }
+    }
+
+    public void updateHero(int id, String type, String nom, int niveauvie, int niveauforce, String armeetousort, String bouclier) {
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement("UPDATE hero SET type = ?, nom = ?, niveauvie = ?, niveauforce = ?, armeetousort = ?, bouclier = ? WHERE id = ?");
+            preparedStatement.setString(1, type);
+            preparedStatement.setString(2, nom);
+            preparedStatement.setInt(3, niveauvie);
+            preparedStatement.setInt(4, niveauforce);
+            preparedStatement.setString(5, armeetousort);
+            preparedStatement.setString(6, bouclier);
+            preparedStatement.setInt(7, id);
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+
+        }
+    }
+
+    public void deleteHero(int id) {
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement("DELETE FROM hero WHERE id = ?");
+            preparedStatement.setInt(1, id);
+            preparedStatement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
 

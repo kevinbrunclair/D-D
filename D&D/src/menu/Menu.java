@@ -15,8 +15,9 @@ public class Menu {
                 Please enter your choice:
                 1. CreateHero
                 2. SelectHero Database
-                3. ChangeLifPointsHero
-                4. Quit
+                3. UpdateHero Database
+                4. DeleteHero Database
+                5. Quit
                 """);
     }
 

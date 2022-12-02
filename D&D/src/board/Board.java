@@ -8,8 +8,8 @@ import player.Personnage;
 import game.CharacterOutOfPlatformException;
 
 import java.util.ArrayList;
-import java.util.Random;
 
+// Famille de collection : List/ordo/doublon  Set/non-ordo/no doublon  Map asso clé/valeur
 public class Board {
 private ArrayList<Case> board = new ArrayList<Case>();
     private int nbCases;
@@ -150,6 +150,10 @@ private ArrayList<Case> board = new ArrayList<Case>();
     }
 }
 
+
+// LE HASH MAP
+//
+//
 //    private ArrayList<Box> board = new ArrayList<Box>();
 //
 //    public Board() {
